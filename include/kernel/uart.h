@@ -5,6 +5,13 @@
 #ifndef UART_H
 #define UART_H
 
+uint32_t mmio_read(uint32_t reg);
+void delay(int32_t count);
+void mmio_write(uint32_t reg, uint32_t data);
+void uart_init();
+void uart_putc(unsigned char c);
+unsigned char uart_getc();
+void uart_puts(const char* str);
 enum
 {
     // The GPIO registers base address.
@@ -35,12 +42,6 @@ enum
     UART0_ITOP   = (UART0_BASE + 0x88),
     UART0_TDR    = (UART0_BASE + 0x8C),
 };
-uint32_t mmio_read(uint32_t reg);
-void delay(int32_t count);
-void mmio_write(uint32_t reg, uint32_t data);
-void uart_init();
-void uart_putc(unsigned char c);
-unsigned char uart_getc();
-void uart_puts(const char* str);
+
 
 #endif

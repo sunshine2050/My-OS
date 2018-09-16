@@ -1,6 +1,6 @@
 #include <stddef.h>
 #include <stdint.h>
-#include "D:\Samy\Build OS\raspi-kernel\include\kernel\uart.h"
+#include <kernel/uart.h>
 
 inline void mmio_write(uint32_t reg, uint32_t data)
 {
